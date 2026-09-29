@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>설 연휴 기차표 예매</title>
+
+  <!-- VWO SmartCode를 이 위치에 붙여넣으세요 -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7fb;
+      color: #1f2937;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+    }
+
+    .header {
+      background: #0d47a1;
+      color: white;
+      padding: 16px 24px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .container {
+      width: min(920px, calc(100% - 32px));
+      margin: 40px auto;
+    }
+
+    .hero {
+      background: white;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+      background: #fff3cd;
+      color: #7a4f01;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    #test-message {
+      margin: 0 0 24px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .ticket-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .info-card {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .info-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .info-card strong {
+      font-size: 17px;
+    }
+
+    #booking-button {
+      width: 100%;
+      padding: 17px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #e53935;
+      color: white;
+      font-size: 19px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #booking-button:hover {
+      background: #c62828;
+    }
+
+    #result-message {
+      min-height: 28px;
+      margin-top: 16px;
+      color: #0d47a1;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .notice {
+      margin-top: 24px;
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 24px;
+      }
+
+      .ticket-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">Happy Tet Rail</header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="label">2027 설 연휴 특별 예매</div>
+
+      <h1>고향 가는 길, 지금 미리 준비하세요</h1>
+
+      <!-- VWO에서 이 문장만 A/B로 변경합니다 -->
+      <p id="test-message">
+        지금 설 연휴 비행기표를 예매하면 편안한 좌석과 할인 혜택을 받을 수 있습니다.
+      </p>
+
+      <div class="ticket-info">
+        <div class="info-card">
+          <span>노선</span>
+          <strong>서울 → 부산</strong>
+        </div>
+
+        <div class="info-card">
+          <span>출발일</span>
+          <strong>2027년 2월 5일</strong>
+        </div>
+
+        <div class="info-card">
+          <span>예상 요금</span>
+          <strong>₩59,800</strong>
+        </div>
+      </div>
+
+      <button id="booking-button" type="button">예매하기</button>
+
+      <p id="result-message" aria-live="polite"></p>
+
+      <p class="notice">
+        본 페이지는 수업용 A/B 테스트 프로토타입입니다.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("booking-button").addEventListener("click", function () {
+      document.getElementById("result-message").textContent =
+        "예매 페이지로 이동합니다. 참여해 주셔서 감사합니다.";
+    });
+  </script>
+</body>
+</html>
